@@ -1,6 +1,7 @@
 import "./App.css";
 import logo from "./assets/logo2.png";
 import About from "./sections/About";
+import ArtifactsContent from "./sections/ArtifactsContent";
 import Artificats from "./sections/Artificats";
 import CvPage from "./sections/CvPage";
 import Home from "./sections/Home";
@@ -70,6 +71,9 @@ function App() {
         </div>
         <div className="h-auto" id="artificats">
           <Artificats />
+        </div>
+        <div className="h-auto">
+          <ArtifactsContent />
         </div>
       </div>
       <div className="drawer-side">
