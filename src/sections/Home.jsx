@@ -10,16 +10,17 @@ const Home = () => {
   const imgRef = useRef(null);
 
   // Use the inView hook with the created refs
-  const inView = useInView(ref, { threshold: 1 });
-  const imgInView = useInView(imgRef, { threshold: 1 });
+  const inView = useInView(ref, { threshold: 0.5 });
+  const imgInView = useInView(imgRef, { threshold: 0.5 });
 
   return (
-    <div className="h-screen w-full flex" ref={ref}>
+    <div className="h-screen w-full flex">
       <motion.div
         initial={{ opacity: 0, x: "-100px" }}
         animate={inView ? { x: 0, opacity: 1 } : { x: "-100px", opacity: 0 }}
         transition={{ duration: 0.8 }}
         className="w-1/2 h-full flex items-center justify-center flex-col gap-4"
+        ref={ref}
       >
         <h2 className="text-left text-3xl">Hello!!</h2>
         <h1 className="text-4xl font-bold">I&apos;m Mark John Lagria</h1>
@@ -63,10 +64,7 @@ const Home = () => {
           <FaDownload />
         </motion.a>
       </motion.div>
-      <div
-        className="w-1/2 h-full flex items-center justify-center flex-col"
-        ref={imgRef}
-      >
+      <div className="w-1/2 h-full flex items-center justify-center flex-col">
         <motion.div
           initial={{ opacity: 0, x: "100px" }}
           animate={
@@ -74,6 +72,7 @@ const Home = () => {
           }
           transition={{ duration: 0.8 }}
           className="w-[60%] h-[60%] flex items-center justify-center bg-white rounded-full"
+          ref={imgRef}
         >
           <img src={me} alt="me" className="rounded-full w-[100%] h-[90%]" />
         </motion.div>

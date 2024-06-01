@@ -6,11 +6,11 @@ import React from "react";
 const CvPage = () => {
   const ref = React.useRef(null);
   const textRef = React.useRef(null);
-  const inView = useInView(ref, { threshold: 1 });
-  const txtInView = useInView(textRef, { threshold: 1 });
+  const inView = useInView(ref, { threshold: 0.5 });
+  const txtInView = useInView(textRef, { threshold: 0.5 });
   return (
     <div className="bg-[#1c1c1f] w-full h-screen flex flex-col">
-      <div className="w-full h-[10%] flex items-center" ref={textRef}>
+      <div className="w-full h-[10%] flex items-center">
         <motion.h1
           initial={{ x: "-80px", opacity: 0 }}
           animate={
@@ -18,6 +18,7 @@ const CvPage = () => {
           }
           transition={{ duration: 0.5 }}
           className="text-3xl text-center text-white ml-10"
+          ref={textRef}
         >
           Resume and Cover Letter
         </motion.h1>

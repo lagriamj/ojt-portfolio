@@ -6,19 +6,16 @@ import { motion, useInView } from "framer-motion";
 const Artificats = () => {
   const ref = React.useRef(null);
   const textRef = React.useRef(null);
-  const inView = useInView(ref, { threshold: 1 });
-  const txtInView = useInView(textRef, { threshold: 1 });
+  const inView = useInView(ref, { threshold: 0.5 });
   return (
     <div className="w-full h-screen bg-[#34353a] flex">
-      <div
-        className="w-[40%] h-full flex items-center justify-center"
-        ref={ref}
-      >
+      <div className="w-[40%] h-full flex items-center justify-center">
         <motion.div
           initial={{ x: "-80px", opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : { x: "-80px", opacity: 0 }}
           transition={{ duration: 0.6 }}
           className="h-[70%] w-[70%] border-2 border-white rounded-xl relative"
+          ref={ref}
         >
           <motion.img
             whileHover={{
@@ -32,11 +29,8 @@ const Artificats = () => {
           />
         </motion.div>
       </div>
-      <div
-        className="w-[60%] h-full flex items-center justify-center"
-        ref={ref}
-      >
-        <motion.div className="flex flex-col">
+      <div className="w-[60%] h-full flex items-center justify-center">
+        <motion.div className="flex flex-col" ref={ref}>
           <motion.h1
             initial={{ y: "-20px", opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : { y: "-80px", opacity: 0 }}

@@ -10,16 +10,17 @@ import githublogo from "../assets/githublogo.png";
 const About = () => {
   const ref = React.useRef(null);
   const textRef = React.useRef(null);
-  const inView = useInView(ref, { threshold: 1 });
-  const txtInView = useInView(textRef, { threshold: 1 });
+  const inView = useInView(ref, { threshold: 0.5 });
+  const txtInView = useInView(textRef, { threshold: 0.5 });
   return (
     <div className="w-full h-screen flex bg-[#28292d]">
-      <div className="w-1/2 h-full flex items-center justify-center" ref={ref}>
+      <div className="w-1/2 h-full flex items-center justify-center">
         <motion.div
           initial={{ x: "-80px", opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : { x: "-80px", opacity: 0 }}
           transition={{ duration: 0.4 }}
           className="h-[60%] w-[60%] border-2 border-white rounded-xl relative"
+          ref={ref}
         >
           <motion.img
             whileHover={{
@@ -33,10 +34,7 @@ const About = () => {
           />
         </motion.div>
       </div>
-      <div
-        className="w-1/2 h-full flex flex-col items-start justify-center"
-        ref={textRef}
-      >
+      <div className="w-1/2 h-full flex flex-col items-start justify-center">
         <motion.div
           initial={{ opacity: 0, y: "50px" }}
           animate={
@@ -44,6 +42,7 @@ const About = () => {
           }
           transition={{ duration: 0.8 }}
           className="h-full w-[80%] flex flex-col items-start justify-center"
+          ref={textRef}
         >
           <span className="text-5xl mb-6">
             About <b className="text-red-500">Me</b>
