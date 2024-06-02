@@ -1,9 +1,11 @@
+/* eslint-disable react/no-children-prop */
 import { FaDownload } from "react-icons/fa";
 import me from "../assets/me.png";
 import { motion, useInView } from "framer-motion";
 import resume from "../../public/Resume_Lagria-main.pdf";
 import { useRef } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { Code, Stack } from "@chakra-ui/react";
 
 const Home = () => {
   const ref = useRef(null);
@@ -22,32 +24,46 @@ const Home = () => {
         className="w-1/2 h-full flex items-center justify-center flex-col gap-4"
         ref={ref}
       >
-        <h2 className="text-left text-3xl">Hello!!</h2>
-        <h1 className="text-4xl font-bold">I&apos;m Mark John Lagria</h1>
+        <Code
+          style={{
+            fontSize: "1.7rem",
+          }}
+          colorScheme="orange"
+          children="Hello World!"
+        />
+        <Stack direction="row">
+          <Code
+            style={{
+              fontSize: "1.7rem",
+            }}
+            children="I'm"
+          />
+          <Code
+            style={{
+              fontSize: "1.8rem",
+              fontWeight: "bold",
+            }}
+            colorScheme="red"
+            children="Mark John Lagria"
+          />
+        </Stack>
         <div className="flex items-center justify-center gap-2 w-full ">
-          <h1 className="text-2xl">I am a </h1>
           <span className="text-red-500 text-3xl font-semibold">
-            <Typewriter
-              words={[
-                "Back-End Developer",
-                "Front-End Developer",
-                "Full-Stack Developer",
-              ]}
-              loop
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-              className="tex-red-700"
+            <Code
+              style={{
+                fontSize: "1.2rem",
+              }}
+              children="An Aspring Software Developer"
             />
           </span>
         </div>
 
-        <p className="text-lg font-light w-[70%] text-justify">
-          A graduating IT student from the University of Mindanao I specialized
-          in Back-End Development, and can also do Full-Stack Development
-        </p>
+        <Code
+          className="w-[60%] text-center"
+          colorScheme="red"
+          children=" I am a graduating IT student from the University of Mindanao I specialized
+          in Back-End Development, and can also do Full-Stack Development"
+        />
         <motion.a
           whileHover={{
             backgroundColor: "transparent",

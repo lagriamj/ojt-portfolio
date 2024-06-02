@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React from "react";
 import me1 from "../assets/me1.webp";
 import { motion, useInView } from "framer-motion";
@@ -6,6 +7,7 @@ import xlogo from "../assets/xlogo.png";
 import iglogo from "../assets/iglogo.png";
 import linkedinlogo from "../assets/linkedinlogo.png";
 import githublogo from "../assets/githublogo.png";
+import { Code } from "@chakra-ui/react";
 
 const About = () => {
   const ref = React.useRef(null);
@@ -44,9 +46,11 @@ const About = () => {
           className="h-full w-[80%] flex flex-col items-start justify-center"
           ref={textRef}
         >
-          <span className="text-5xl mb-6">
-            About <b className="text-red-500">Me</b>
-          </span>
+          <Code
+            className="mb-8"
+            style={{ fontSize: "2.0rem", fontWeight: "bold" }}
+            children="About Me"
+          />
           <p className="text-lg text-justify w-[70%]">
             Hi, I&apos;m{" "}
             <span className="text-red-500 text-xl font-semibold">

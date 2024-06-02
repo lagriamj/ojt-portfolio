@@ -1,7 +1,9 @@
+/* eslint-disable react/no-children-prop */
 import React from "react";
 import me2 from "../assets/me2.webp";
 import interns from "../assets/all-interns.jpg";
 import { motion, useInView } from "framer-motion";
+import { Code } from "@chakra-ui/react";
 
 const Artificats = () => {
   const ref = React.useRef(null);
@@ -37,7 +39,16 @@ const Artificats = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl mb-4 italic"
           >
-            Artificats{">>>"}
+            <Code
+              style={{
+                fontSize: "2.5rem",
+                marginBottom: "10px",
+                fontWeight: "bold",
+              }}
+              colorScheme="red"
+              children="Artificats>>>"
+              variant={"outline"}
+            />
           </motion.h1>
           <motion.div
             initial={{ x: "80px", opacity: 0 }}
