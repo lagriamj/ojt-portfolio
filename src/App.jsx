@@ -7,10 +7,11 @@ import Certificates from "./sections/Certificates";
 import CvPage from "./sections/CvPage";
 import EndorsementAndAcceptance from "./sections/EndorsementAndAcceptance";
 import Home from "./sections/Home";
+import Works from "./sections/Works";
 
 function App() {
   return (
-    <div className="drawer">
+    <div className="drawer overflow-hidden">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col bg-main text-white">
         {/* Navbar */}
@@ -59,7 +60,7 @@ function App() {
                 <a href="#certificates">Certificates</a>
               </li>
               <li>
-                <a href="#contact">Works</a>
+                <a href="#works">Works</a>
               </li>
             </ul>
           </div>
@@ -86,6 +87,9 @@ function App() {
         <div className="h-auto" id="certificates">
           <Certificates />
         </div>
+        <div className="h-auto" id="works">
+          <Works />
+        </div>
       </div>
       <div className="drawer-side">
         <label
@@ -93,13 +97,28 @@ function App() {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200">
+        <ul className="menu p-4 w-80 min-h-full bg-main text-white">
           {/* Sidebar content here */}
           <li>
-            <a>Sidebar Item 1</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#cv">CV and Cover Letter</a>
+          </li>
+          <li>
+            <a href="#letters">Letters</a>
+          </li>
+          <li>
+            <a href="#artificats">Artifacts</a>
+          </li>
+          <li>
+            <a href="#certificates">Certificates</a>
+          </li>
+          <li>
+            <a href="#works">Works</a>
           </li>
         </ul>
       </div>

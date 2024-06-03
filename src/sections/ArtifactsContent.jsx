@@ -94,8 +94,8 @@ const ArtifactsContent = () => {
   const card2InView = useInView(card2Ref, { threshold: 0.5 });
   return (
     <div className="flex flex-col  w-full h-auto bg-main">
-      <div className="h-screen flex">
-        <div className="w-[65%] h-full p-10 flex items-center justify-center">
+      <div className="h-screen flex flex-col-reverse md:flex-row">
+        <div className="w-full md:w-[65%] h-full pb-10 flex items-center justify-center">
           <motion.img
             initial={{ x: "-80px", opacity: 0 }}
             animate={
@@ -112,61 +112,61 @@ const ArtifactsContent = () => {
           variants={textContainerVariants}
           initial="hidden"
           animate={textInView ? "show" : "hidden"}
-          className="w-[35%] h-full flex flex-col items-center justify-center gap-4"
+          className="w-full md:w-[35%] h-full flex flex-col items-center justify-center gap-4 p-4 md:p-0"
           ref={textRef}
         >
           <motion.h1
             variants={gridTextVariants}
-            className="text-4xl  text-red-300 font-semibold"
+            className="text-2xl md:text-4xl text-red-300 font-semibold"
           >
             <Code
               children="Deployment Day"
-              className=" text-center"
+              className="text-center"
               colorScheme="gray"
-              style={{ fontSize: "2.0rem" }}
+              style={{ fontSize: "1.5rem" }}
             />
           </motion.h1>
           <motion.h1
             variants={gridTextVariants}
-            className="text-4xl text-red-400 font-semibold"
+            className="text-2xl md:text-4xl text-red-400 font-semibold"
           >
             <Code
               children="Deployment Day"
-              className=" text-center"
+              className="text-center"
               colorScheme="yellow"
-              style={{ fontSize: "2.0rem" }}
+              style={{ fontSize: "1.5rem" }}
             />
           </motion.h1>
           <motion.h1
             variants={gridTextVariants}
-            className="text-4xl text-red-500 font-semibold "
+            className="text-2xl md:text-4xl text-red-500 font-semibold"
           >
             <Code
               children="Deployment Day"
-              className=" text-center"
+              className="text-center"
               colorScheme="red"
-              style={{ fontSize: "2.0rem" }}
+              style={{ fontSize: "1.5rem" }}
             />
           </motion.h1>
           <motion.h1
             variants={gridTextVariants}
-            className="text-4xl text-red-400 font-semibold"
+            className="text-2xl md:text-4xl text-red-400 font-semibold"
           >
             <Code
               children="Deployment Day"
-              className=" text-center"
+              className="text-center"
               colorScheme="yellow"
-              style={{ fontSize: "2.0rem" }}
+              style={{ fontSize: "1.5rem" }}
             />
           </motion.h1>
           <motion.h1
             variants={gridTextVariants}
-            className="text-4xl text-red-300 font-semibold"
+            className="text-2xl md:text-4xl text-red-300 font-semibold"
           >
             <Code
               children="Deployment Day"
-              className=" text-center"
-              style={{ fontSize: "2.0rem" }}
+              className="text-center"
+              style={{ fontSize: "1.5rem" }}
             />
           </motion.h1>
         </motion.div>
@@ -177,13 +177,13 @@ const ArtifactsContent = () => {
           children="Daily Activities"
           className="mb-10"
         />
-        <div className="w-[90%] h-full">
+        <div className="w-[90%] h-full ">
           <motion.div
             variants={cardVariants}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             ref={ref}
-            className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 "
+            className="h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center"
           >
             {imageList.map((image, index) => (
               <motion.div variants={cardItemVariants} key={index}>
@@ -214,7 +214,7 @@ const ArtifactsContent = () => {
             initial="hidden"
             animate={card2InView ? "show" : "hidden"}
             ref={card2Ref}
-            className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 "
+            className="h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 "
           >
             <motion.div variants={cardItemVariants2}>
               <Card
@@ -226,7 +226,20 @@ const ArtifactsContent = () => {
               >
                 <Meta
                   title="Exit Conference"
-                  description="My internship at Infosoft Studio/Miniclean over the past three months has been an incredible experience. I have gained invaluable knowledge and hands-on experience, particularly in backend development. Working alongside talented professionals, I have honed my skills in coding, database management, and server-side logic. This opportunity has not only enhanced my technical abilities but also provided me with a deeper understanding of the industry, preparing me for a successful career in software development."
+                  description={
+                    <p className="w-[60%] lg:w-full">
+                      My internship at Infosoft Studio/Miniclean over the past
+                      three months has been an incredible experience. I have
+                      gained invaluable knowledge and hands-on experience,
+                      particularly in backend development. Working alongside
+                      talented professionals, I have honed my skills in coding,
+                      database management, and server-side logic. This
+                      opportunity has not only enhanced my technical abilities
+                      but also provided me with a deeper understanding of the
+                      industry, preparing me for a successful career in software
+                      development.
+                    </p>
+                  }
                 />
               </Card>
             </motion.div>

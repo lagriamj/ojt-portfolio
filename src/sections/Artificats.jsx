@@ -10,8 +10,8 @@ const Artificats = () => {
   // const textRef = React.useRef(null);
   const inView = useInView(ref, { threshold: 0.5 });
   return (
-    <div className="w-full h-screen bg-[#34353a] flex">
-      <div className="w-[40%] h-full flex items-center justify-center">
+    <div className="w-full lg:h-screen h-auto bg-[#34353a] flex items-center justify-center">
+      <div className="hidden md:flex w-[40%] h-full items-center justify-center">
         <motion.div
           initial={{ x: "-80px", opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : { x: "-80px", opacity: 0 }}
@@ -26,13 +26,17 @@ const Artificats = () => {
               transition: { duration: 0.5 },
             }}
             src={me2}
-            alt=""
-            className="w-full h-full object-cover absolute top-3 left-3  rounded-xl"
+            alt="Mark John Lagria"
+            className="w-full h-full object-cover absolute top-3 left-3 rounded-xl"
           />
         </motion.div>
       </div>
-      <div className="w-[60%] h-full flex items-center justify-center">
-        <motion.div className="flex flex-col" ref={ref}>
+
+      <div className="lg:w-[60%] w-full h-full flex items-center justify-center">
+        <motion.div
+          className="flex flex-col items-center justify-center"
+          ref={ref}
+        >
           <motion.h1
             initial={{ y: "-20px", opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : { y: "-80px", opacity: 0 }}

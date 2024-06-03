@@ -11,7 +11,7 @@ const CvPage = () => {
   const inView = useInView(ref, { threshold: 0.5 });
   const txtInView = useInView(textRef, { threshold: 0.5 });
   return (
-    <div className="bg-[#1c1c1f] w-full h-screen flex flex-col">
+    <div className="bg-[#1c1c1f] w-full lg:h-screen h-auto flex flex-col">
       <div className="w-full h-[10%] flex items-center justify-center my-6">
         <motion.h1
           initial={{ x: "-80px", opacity: 0 }}
@@ -28,7 +28,10 @@ const CvPage = () => {
           />
         </motion.h1>
       </div>
-      <div className="w-full h-[90%] flex gap-10 justify-center" ref={ref}>
+      <div
+        className="w-full h-[90%] flex flex-col md:flex-col lg:flex-row gap-10 justify-center"
+        ref={ref}
+      >
         <motion.img
           initial={{ x: "-80px", opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : { x: "-80px", opacity: 0 }}
