@@ -4,7 +4,6 @@ import me from "../assets/me.png";
 import { motion, useInView } from "framer-motion";
 import resume from "../../public/Resume_Lagria-main.pdf";
 import { useRef } from "react";
-import { Typewriter } from "react-simple-typewriter";
 import { Code, Stack } from "@chakra-ui/react";
 
 const Home = () => {

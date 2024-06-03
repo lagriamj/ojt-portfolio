@@ -208,7 +208,7 @@ const ArtifactsContent = () => {
           }}
           className="my-10"
         />
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex items-center justify-center pb-6">
           <motion.div
             variants={cardVariants2}
             initial="hidden"

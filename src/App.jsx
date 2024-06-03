@@ -1,9 +1,11 @@
 import "./App.css";
-import logo from "./assets/logo2.png";
+// import logo from "./assets/logo2.png";
 import About from "./sections/About";
 import ArtifactsContent from "./sections/ArtifactsContent";
 import Artificats from "./sections/Artificats";
+import Certificates from "./sections/Certificates";
 import CvPage from "./sections/CvPage";
+import EndorsementAndAcceptance from "./sections/EndorsementAndAcceptance";
 import Home from "./sections/Home";
 
 function App() {
@@ -48,10 +50,13 @@ function App() {
                 <a href="#cv">CV and Cover Letter</a>
               </li>
               <li>
+                <a href="#letters">Letters</a>
+              </li>
+              <li>
                 <a href="#artificats">Artifacts</a>
               </li>
               <li>
-                <a href="#contact">Certificates</a>
+                <a href="#certificates">Certificates</a>
               </li>
               <li>
                 <a href="#contact">Works</a>
@@ -69,11 +74,17 @@ function App() {
         <div className="h-auto" id="cv">
           <CvPage />
         </div>
+        <div className="h-auto" id="letters">
+          <EndorsementAndAcceptance />
+        </div>
         <div className="h-auto" id="artificats">
           <Artificats />
         </div>
         <div className="h-auto">
           <ArtifactsContent />
+        </div>
+        <div className="h-auto" id="certificates">
+          <Certificates />
         </div>
       </div>
       <div className="drawer-side">

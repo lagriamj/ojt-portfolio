@@ -7,7 +7,7 @@ import { Code } from "@chakra-ui/react";
 
 const Artificats = () => {
   const ref = React.useRef(null);
-  const textRef = React.useRef(null);
+  // const textRef = React.useRef(null);
   const inView = useInView(ref, { threshold: 0.5 });
   return (
     <div className="w-full h-screen bg-[#34353a] flex">
