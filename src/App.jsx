@@ -4,6 +4,7 @@ import About from "./sections/About";
 import ArtifactsContent from "./sections/ArtifactsContent";
 import Artificats from "./sections/Artificats";
 import Certificates from "./sections/Certificates";
+import Contact from "./sections/Contact";
 import CvPage from "./sections/CvPage";
 import EndorsementAndAcceptance from "./sections/EndorsementAndAcceptance";
 import Home from "./sections/Home";
@@ -37,7 +38,7 @@ function App() {
               </svg>
             </label>
           </div>
-          <div className="flex-1 px-2 mx-2">lagriamj.dev</div>
+          <div className="flex-1 px-2 mx-2">lagriamj.portfolio</div>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
@@ -61,6 +62,9 @@ function App() {
               </li>
               <li>
                 <a href="#works">Works</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -90,6 +94,9 @@ function App() {
         <div className="h-auto" id="works">
           <Works />
         </div>
+        <div className="h-auto" id="contact">
+          <Contact />
+        </div>
       </div>
       <div className="drawer-side">
         <label
@@ -99,6 +106,9 @@ function App() {
         ></label>
         <ul className="menu p-4 w-80 min-h-full bg-main text-white">
           {/* Sidebar content here */}
+          <li>
+            <a href="#home">Home</a>
+          </li>
           <li>
             <a href="#home">Home</a>
           </li>
@@ -119,6 +129,9 @@ function App() {
           </li>
           <li>
             <a href="#works">Works</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </div>
