@@ -71,7 +71,7 @@ const Works = () => {
         className="my-10"
         style={{ fontSize: "2rem" }}
       />
-      <div className="h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-7 gap-y-10">
+      <div className="h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
         {worksData.map((work) => (
           <HoverCard
             key={work.title} // Use a unique key for each work item
